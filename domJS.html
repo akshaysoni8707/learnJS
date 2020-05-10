@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="style1">101 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolorem recusandae voluptatibus blanditiis dolores totam, nulla nobis vel, labore impedit cupiditate possimus ut similique asperiores beatae cum? Rerum, odio eius!</p>
+    <p id="p2">102 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolorem recusandae voluptatibus blanditiis dolores totam, nulla nobis vel, labore impedit cupiditate possimus ut similique asperiores beatae cum? Rerum, odio eius!</p>
+    <span class="style1">span Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio doloremque mollitia at optio quod quas totam, debitis iste labore, facere exercitationem voluptatibus consectetur. Odio dolore tempore necessitatibus reprehenderit possimus?</span>
+    <p>103 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolorem recusandae voluptatibus blanditiis dolores totam, nulla nobis vel, labore impedit cupiditate possimus ut similique asperiores beatae cum? Rerum, odio eius!</p>
+    <p class="style1">104 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolorem recusandae voluptatibus blanditiis dolores totam, nulla nobis vel, labore impedit cupiditate possimus ut similique asperiores beatae cum? Rerum, odio eius!</p>
+    <div id="demo"></div>
+    <img src="" alt="ERROR" id="img1">
+</body>
+<script>
+    var x = document.querySelectorAll('.style1');
+    // document.getElementById('demo').innerText = x[1].innerHTML;
+    var ThemeCol = "yellow";
+    for (let i = 0; i < x.length; i++) {
+        x[i].style.color = ThemeCol;
+        x[i].style.backgroundColor = "rgb(0,100,0)";
+    }
+</script>
+
+</html>

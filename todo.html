@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .appWrapper {
+            margin: auto;
+            width: 600px;
+        }
+        
+        .headBox {
+            width: 600px;
+            background-color: purple;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .headBox h2 {
+            margin: 10px;
+            color: white;
+        }
+        
+        #enterData {
+            height: 25px;
+            width: 80%;
+            padding: 2px;
+            margin: 0px;
+            vertical-align: middle;
+        }
+        
+        #addBtn {
+            vertical-align: middle;
+            height: 25px;
+            width: 20%;
+            padding: 2px 5px;
+            margin: 0px;
+            background-color: green;
+            color: white;
+        }
+        
+        #taskList {
+            width: 600px;
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        #taskList li {
+            padding: 5px;
+            position: relative;
+            line-height: 2;
+            background-color: blueviolet;
+            color: white;
+        }
+        
+        .closeTask {
+            position: absolute;
+            right: 0;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        
+        .closeTask:hover {
+            background-color: crimson;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="appWrapper">
+        <div class="headBox">
+            <h2>TODO APP</h2>
+            <input type="text" id="enterData" placeholder="Enter task...">
+            <span id="addBtn">ADD</span>
+        </div>
+        <ul id="taskList">
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('addBtn').addEventListener('click', function() {
+        var newTask = document.getElementById('enterData').value;
+        if (newTask == "") {
+            alert('No data');
+        } else {
+            var txt = '<li><input type="checkbox">' + newTask + '<span class="closeTask">x</span></li>';
+            document.getElementById('taskList').innerHTML += txt;
+            document.getElementById('enterData').value = "";
+        }
+        closeAction();
+        taskDone();
+    });
+
+    function taskDone() {
+        var taskArr = document.getElementsByTagName('li');
+        for (let i = 0; i < taskArr.length; i++) {
+            taskArr[i].addEventListener('click', function() {
+                //this.style.textDecoration = (this.style.textDecoration == "line-through") ? "none" : "line-through";
+                if (this.style.textDecoration == "line-through") {
+                    this.style.textDecoration = "none";
+                    this.children[0].removeAttribute('checked');
+                } else {
+                    this.style.textDecoration = "line-through";
+                    this.children[0].setAttribute('checked', 'true');
+                }
+            });
+        }
+    }
+
+    function closeAction() {
+        var closeArr = document.getElementsByClassName('closeTask');
+        for (let i = 0; i < closeArr.length; i++) {
+            closeArr[i].addEventListener('click', function() {
+                //this.parentElement.style.display = "none";
+                this.parentElement.remove();
+            });
+        }
+    }
+</script>
+
+</html>

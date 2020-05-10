@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+    </div>
+    <div id="demo1">
+
+    </div>
+</body>
+<script>
+    var fruits = ["apple", 'mango', "grapes"];
+    //   document.getElementById('demo').innerHTML = fruits.toString();
+    //    fruits.pop();
+    //    fruits.push("Banana");
+    //    fruits[1] = '56';
+    //    fruits[fruits.length] = '78';
+
+    //fruits.splice(1, 1, 'banana', 'pineapple');
+    var fruits2 = ['banana', 'pineapple'];
+    var fruits3 = fruits.concat(fruits2);
+    //    document.getElementById('demo').innerHTML = fruits3.join(" - ");
+    document.getElementById('demo').innerHTML = fruits3;
+    fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    var citrus = fruits.slice(2, 3);
+    document.getElementById('demo1').innerHTML = citrus.join(" - ");
+</script>
+
+</html>

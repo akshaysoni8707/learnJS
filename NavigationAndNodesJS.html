@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem voluptates aperiam, quae nobis et, omnis ipsum neque debitis necessitatibus unde, quibusdam velit doloremque blanditiis. Pariatur laborum corporis nostrum iste.</p>
+        <p id="demo">2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem voluptates aperiam, quae nobis et, omnis ipsum neque debitis necessitatibus unde, quibusdam velit doloremque blanditiis. Pariatur laborum corporis nostrum iste.</p>
+        <p>3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem voluptates aperiam, quae nobis et, omnis ipsum neque debitis necessitatibus unde, quibusdam velit doloremque blanditiis. Pariatur laborum corporis nostrum iste.</p>
+    </div>
+</body>
+<script>
+    /// Nodes and Navigation
+    document.getElementById('demo').parentNode.style.border = "1px solid red";
+    document.getElementById('demo').parentNode.childNodes[3].style.color = "red";
+    document.getElementById('demo').parentNode.children[2].style.color = "blue";
+    document.getElementById('demo').previousElementSibling.style.fontSize = "30px";
+    document.getElementById('demo').nextElementSibling.style.fontSize = "30px";
+    var para = document.createElement('p');
+    var txt = document.createTextNode('Hello World');
+    para.appendChild(txt);
+    document.getElementById('demo').parentNode.appendChild(para);
+    document.getElementById('demo').parentNode.innerHTML += '<p>HELLO WORLD</p>';
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function person(fName, lName, age) {
+        this.fName = fName;
+        this.lName = lName;
+        this.age = age;
+        this.fullname = function() {
+            return this.fName + ' ' + this.lName;
+        }
+        this.toString = function() {
+            return 'Name : ' + this.fullname() + ' , Age : ' + this.age;
+        }
+    };
+    var father = new person('Akshay', 'Soni', 25);
+    var mother = new person('Monika', 'Soni', 23);
+    for (x in father) {
+        console.log(x + " : " + father[x]);
+    }
+    console.log(mother.toString());
+    // console.log(father.fullname());
+    // console.log(mother.fullname());
+</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropContent {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button id="C">Click Me</button>
+        <div class="dropContent" id="DC">
+            hello
+        </div>
+    </div>
+</body>
+<script>
+    /// Mouse events 
+    // mouseover , mouseout , mousedown , mouseup , click 
+    /// keydown , keyup , keypress
+    document.getElementById('DC').style.display = "none";
+    document.getElementById('C').addEventListener('click', function() {
+        // if (document.getElementById('DC').style.display == "none") {
+        //     document.getElementById('DC').style.display = "block";
+        // } else {
+        //     document.getElementById('DC').style.display = "none";
+        // }
+        var x = document.getElementById('DC');
+        x.style.display = (x.style.display == "none") ? "block" : "none";
+    });
+</script>
+
+</html>

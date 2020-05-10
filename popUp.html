@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    //Three types of browser popups
+    //1. Alert
+    //2. Confirm
+    //3. Prompt
+
+    //var a = 125;
+    //alert("Hello Document" + a);
+    // if (confirm('Hit a button')) {
+    //     document.getElementById('demo').innerHTML = '<b> OK pressed </b>';
+    // } else {
+    //     document.getElementById('demo').innerHTML = '<b> Cancel pressed </b>';
+    // }
+    var name = prompt("Enter your name", 'Java');
+    if (name == "null" || name == "") {
+        document.getElementById('demo').innerText = 'No valid data';
+    } else {
+        document.getElementById('demo').innerText = 'Hello ' + name;
+    }
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dispStudent">
+
+    </div>
+</body>
+<script>
+    function student(name, roll, phy, che, mat) {
+        this.name = name;
+        this.roll = roll;
+        this.phy = phy;
+        this.che = che;
+        this.mat = mat;
+        this.total = this.phy + this.che + this.mat;
+        this.toString = function() {
+            return "Name : " + this.name + " Roll : " + this.roll + " Phy : " + this.phy + " Che : " + this.che + " Mat : " + this.mat + " Total : " + this.total;
+        }
+    }
+    var txt;
+    var studentArray = [];
+    studentArray.push(new student('Bhavik', 1, 66, 77, 88));
+    studentArray.push(new student('Jash', 2, 65, 86, 78));
+    studentArray.push(new student('Chinmay', 3, 76, 67, 85));
+    txt = '<table border="1">';
+    txt += '<tr>';
+    txt += '<th>Name</th>';
+    txt += '<th>Roll No</th>';
+    txt += '<th>Physics</th>';
+    txt += '<th>Chemistry</th>';
+    txt += '<th>Maths</th>';
+    txt += '<th>Total</th>';
+    txt += '</tr>';
+    studentArray.forEach(function(value, index) {
+        txt += '<tr>';
+        txt += '<td>' + value.name + '</td>';
+        txt += '<td>' + value.roll + '</td>';
+        txt += '<td>' + value.phy + '</td>';
+        txt += '<td>' + value.che + '</td>';
+        txt += '<td>' + value.mat + '</td>';
+        txt += '<td>' + value.total + '</td>';
+        txt += '</tr>';
+        //    console.log(value.toString());
+    });
+    txt += '</table>';
+
+    document.getElementById('dispStudent').innerHTML = txt;
+</script>
+
+</html>

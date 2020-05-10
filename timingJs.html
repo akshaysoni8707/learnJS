@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <button onclick="y = setTimeout(myfunc,4000)">Hit me</button>
+    <button onclick="clearTimeout(y)">clear</button>
+    <br>
+    <button onclick="x = setInterval(myTimer,1000)">Start Time</button>
+    <button onclick="clearInterval(x)">Stop Time</button>
+</body>
+<script>
+    function myfunc() {
+        alert('Hello');
+    }
+
+    function myTimer() {
+        var d = new Date();
+        document.getElementById('demo').innerText = d.toLocaleTimeString();
+    }
+</script>
+
+</html>

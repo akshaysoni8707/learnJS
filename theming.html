@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .theme-bg {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="themeChangeBtn" themeCol="green">Green</button>
+    <button class="themeChangeBtn" themeCol="blue">Blue</button>
+    <button class="themeChangeBtn" themeCol="orange">Orange</button>
+    <button class="themeChangeBtn" themeCol="tomato">Red</button>
+    <div class="theme-bg">
+    </div>
+</body>
+<script>
+    var themeBtn = document.getElementsByClassName('themeChangeBtn');
+    for (let i = 0; i < themeBtn.length; i++) {
+        themeBtn[i].addEventListener('click', function() {
+            themeChanger(themeBtn[i].getAttribute('themeCol'));
+        });
+    }
+
+    function themeChanger(x) {
+        var bgBlock = document.getElementsByClassName('theme-bg');
+        for (let i = 0; i < bgBlock.length; i++) {
+            bgBlock[i].style.backgroundColor = x;
+        }
+    }
+</script>
+
+</html>

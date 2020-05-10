@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+</body>
+<script type="text/javascript">
+    var fruits = ['Apple', "Mango", 'grapes', 'Kiwi'];
+    var txt = '<ul>';
+    fruits.forEach(function(value) {
+        txt += '<li>' + value + '</li>';
+    });
+    txt += '</ul>';
+    document.getElementById('demo').innerHTML = txt;
+    var books = [35, 100, 150, 95, 200];
+    var newPrice = books.map(function(value) {
+        // if (value > 100) {
+        //     return value + 10;
+        // } else {
+        //     return value;
+        // }
+        return (value > 99) ? (value + 10) : value;
+    });
+    console.log(newPrice);
+    newPrice = books.filter(function(value) {
+        return value > 99;
+    });
+    console.log(newPrice);
+    var marks = [50, 60, 80, 40];
+    var total = marks.reduce(function(t, value) {
+        return t + value;
+    }, 100);
+    console.log('total is ' + total);
+    var number = [36, 45, 48, 62];
+    var passed = number.every(function(value) {
+        return value > 35;
+    });
+    console.log('passed : ' + passed);
+    var failed = number.some(function(value) {
+        return value <= 35;
+    });
+    console.log('failed : ' + failed);
+</script>
+
+</html>

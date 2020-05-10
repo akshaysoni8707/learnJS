@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // with param with return
+    function add(x, y) {
+        return x + y;
+    }
+    // with param without return
+    function sub(x, y) {
+        console.log(x - y);
+    }
+    // without param without return
+    function mul() {
+        var x = 6,
+            y = 2;
+        console.log(x * y);
+    }
+    // without param with return
+    function div() {
+        var x = 6,
+            y = 2;
+        return x / y;
+    }
+    console.log(add(6, 2));
+    sub(6, 2);
+    mul();
+    console.log(div());
+    //variable as a function
+    var expo = function(x) {
+        return x ** 3;
+    }
+    console.log(expo);
+    console.log(expo(3));
+</script>
+
+</html>

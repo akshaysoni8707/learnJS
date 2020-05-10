@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 onclick="changeColor(this)">Heading 1</h1>
+    <h1 id="heading2">Heading 2</h1>
+    <h1 id="heading3">Heading 3</h1>
+</body>
+<script>
+    //Events
+    function changeColor(x) {
+        x.innerHTML = "I am Clicked";
+        x.style.color = "red";
+    }
+
+    function changeColor2() {
+        document.getElementById('heading2').style.color = "blue";
+    }
+    document.getElementById('heading2').onclick = changeColor2;
+    document.getElementById('heading3').addEventListener('click', changeColor3);
+
+    function changeColor3() {
+        // document.getElementById('heading3').style.color = "green";
+        this.style.fontSize = "16px";
+    }
+    document.getElementById('heading3').removeEventListener('click', changeColor3);
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // length property
+    var x = "it's Alright";
+    var y = 'it\'s Alright';
+    console.log(x + ' ' + y);
+    console.log(x.length);
+    // search
+    var str = "Please locate where 'locate' occurs!";
+    console.log(str.indexOf("locate"));
+    console.log(str.lastIndexOf("locate"));
+    // Slice
+    str = "Apple, Banana, Kiwi";
+    // var res = str.slice(15, 19);
+    // console.log(res);
+    var res = str.substring(15, 19);
+    console.log(res);
+    res = str.slice(7);
+    console.log(res);
+    // substr
+    res = str.substr(7, 4);
+    console.log(res);
+    // Replace
+    str = "Please visit Microsoft!";
+    var n = str.replace("visit Microsoft", "W3Schools");
+    console.log(n);
+    var n = str.replace(/visit MICROSOFT/i, "W3Schools website");
+    console.log(n);
+    str = "Please visit Microsoft and Microsoft!";
+    var n = str.replace(/Microsoft/g, "W3Schools");
+    console.log(n);
+    // Uppercase Lowercase
+    var text1 = "Hello World!";
+    console.log(text1.toUpperCase());
+    console.log(text1.toLowerCase());
+    // Concatination
+    var text1 = "Hello";
+    var text2 = "World";
+    var text3 = text1.concat(" ", text2);
+    console.log(text3);
+    console.log(text1 + " " + text2);
+    // trim
+    str = "   Akshay   .";
+    console.log(str + str.length);
+    trimstr = str.trim();
+    console.log(trimstr + trimstr.length);
+    console.log(trimstr.charAt(0));
+    console.log(trimstr[1]);
+    console.log(trimstr.charCodeAt(0));
+</script>
+
+</html>

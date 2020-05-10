@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formWrapper {
+            width: 600px;
+            background-color: rgb(48, 47, 47);
+            margin: auto;
+            padding: 20px;
+            color: white;
+        }
+        
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            margin-top: 10px;
+        }
+        
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formWrapper">
+        <form name="validationForm">
+            <label for="fName">First Name</label>
+            <input type="text" name="fName" id="fName">
+            <p></p>
+            <label for="lName">Last Name</label>
+            <input type="text" name="lName" id="lName">
+            <p></p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <p></p>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <p></p>
+            <input type="submit" value="SUBMIT">
+        </form>
+    </div>
+</body>
+<script>
+    var emailCheck = false;
+    var passwordCheck = false;
+    document.validationForm.addEventListener('submit', function() {
+        var fN = document.validationForm.fName;
+        var lN = document.validationForm.lName;
+        emptyChecker(fN);
+        emptyChecker(lN);
+        emptyChecker(document.validationForm.email);
+        emptyChecker(document.validationForm.password);
+        if (passwordCheck == false) {
+            event.preventDefault();
+        }
+        if (emailCheck == false) {
+            event.preventDefault();
+        }
+    });
+
+    function emptyChecker(x) {
+        if (x.value == "") {
+            x.nextElementSibling.innerText = '* mandatory';
+            x.nextElementSibling.style.color = 'red';
+            event.preventDefault();
+        }
+    }
+
+    document.validationForm.password.addEventListener('keyup', function() {
+        if (this.value == "") {
+            this.nextElementSibling.innerText = "* mandatory";
+            this.nextElementSibling.style.color = 'red';
+            passwordCheck = false;
+        } else {
+            if (this.value.length <= 4) {
+                this.nextElementSibling.innerText = "weak";
+                this.nextElementSibling.style.color = 'orange';
+                passwordCheck = false;
+            } else if (this.value.length < 8 && this.value.length > 4) {
+                this.nextElementSibling.innerText = "good";
+                this.nextElementSibling.style.color = 'yellow';
+                passwordCheck = true;
+            } else {
+                this.nextElementSibling.innerText = "strong";
+                this.nextElementSibling.style.color = 'green';
+                passwordCheck = true;
+            }
+        }
+    });
+    document.validationForm.email.addEventListener('keyup', function() {
+        var atposition = this.value.indexOf('@');
+        var dotposition = this.value.lastIndexOf('.');
+        if (this.value == "") {
+            this.nextElementSibling.innerText = "* mandatory";
+            this.nextElementSibling.style.color = 'red';
+            emailCheck = false;
+        } else {
+            if (atposition < 1 || dotposition < atposition + 2 || this.value.length < dotposition + 3) {
+                this.nextElementSibling.innerText = "invalid email";
+                this.nextElementSibling.style.color = 'red';
+                emailCheck = false;
+            } else {
+                this.nextElementSibling.innerText = "Valid email";
+                this.nextElementSibling.style.color = 'green';
+                emailCheck = true;
+            }
+        }
+    });
+</script>
+
+</html>
