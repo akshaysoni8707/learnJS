@@ -100,7 +100,7 @@
             this.nextElementSibling.style.color = 'red';
             emailCheck = false;
         } else {
-            if (atposition < 1 || dotposition < atposition + 2 || this.value.length < dotposition + 3) {
+            if (atposition < 1 || dotposition < atposition + 2 || dotposition < this.value.length - 2) {
                 this.nextElementSibling.innerText = "invalid email";
                 this.nextElementSibling.style.color = 'red';
                 emailCheck = false;
